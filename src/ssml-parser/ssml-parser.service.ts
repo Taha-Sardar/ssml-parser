@@ -10,7 +10,7 @@ export class SSMLParser {
 
     public parseSSML():Record<string,any> {
         const rootElement = this.xmlDoc.documentElement;
-        return this.nodeToJSON(rootElement);
+        return {[rootElement.tagName]:this.nodeToJSON(rootElement)};
     }
 
     private nodeToJSON(node: Element): Record<string, any> {
