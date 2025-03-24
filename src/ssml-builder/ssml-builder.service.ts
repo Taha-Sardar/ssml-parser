@@ -29,10 +29,10 @@ export class SSMLBuilder {
           let returnString = "";
           const innerXml = SSMLBuilder.objectToXml(item);
           if (innerXml === ""){
-            const combinedTag = attributes ? `<${key} ${attributes}/>` : `<${key}/>`;
-            returnString = combinedTag + '\n';
+            const combinedTag = attributes ? `<${key} ${attributes}/>\n` : `<${key}/>\n`;
+            returnString = combinedTag;
           } else {
-            returnString = openingTag + SSMLBuilder.objectToXml(item) + closingTag + '\n';
+            returnString = openingTag + '\n' + SSMLBuilder.objectToXml(item) + '\n' + closingTag;
           }
           return returnString;
         }).join("");
