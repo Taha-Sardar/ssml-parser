@@ -16,9 +16,9 @@ export class SSMLParser {
     private nodeToJSON(node: Element): Record<string, any> {
         const resultObject: Record<string, any> = {};
         if (node.attributes.length > 0){
-            resultObject['attributes'] = {};
+            resultObject['@attributes'] = {};
             Array.from(node.attributes).forEach(attr => {
-                resultObject['attributes'][attr.nodeName] = attr.nodeValue;
+                resultObject['@attributes'][attr.nodeName] = attr.nodeValue;
             });
         }
 
